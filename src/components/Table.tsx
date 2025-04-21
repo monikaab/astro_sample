@@ -54,19 +54,19 @@ const AuditConclusionTable = (props: Props) => {
             {(row) => (
               <tr class="border-t">
                 <For each={props.headers}>
-                  {(key, index) => (
+                  {(key) => (
                     <td class="p-2 border border-gray-200">
-                      {row[key.toLowerCase()] ? (
-                        key.toLowerCase() === "preparation" ? (
+                      {row[key] ? (
+                        key === "Preparation" ? (
                           <span class="bg-orange-300 text-white text-xs font-medium px-2 py-1 rounded">
-                            {row[key.toLowerCase()]} ✓
+                            {row[key]} ✓
                           </span>
-                        ) : key.toLowerCase() === "review" ? (
+                        ) : key === "Review" ? (
                           <span class="bg-green-400 text-white text-xs font-medium px-2 py-1 rounded">
-                            {row[key.toLowerCase()]} ✓
+                            {row[key]} ✓
                           </span>
                         ) : (
-                          row[key.toLowerCase()]
+                          row[key]
                         )
                       ) : null}
                     </td>

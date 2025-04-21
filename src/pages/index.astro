@@ -12,28 +12,42 @@ const team = [
 ];
 
 const headers = ["Conclusions", "Preparation", "Review"];
-
+const vouchingHeaders = ["Voucher No.", "Recording data", "Description", "Corresponding account", "Amount", "Items to check", "Evidence"]
 const conclusions = [
   {
-    conclusions: "The work has been performed in accordance with the audit program.",
-    preparation: "MC",
-    review: "RT",
+    Conclusions: "The work has been performed in accordance with the audit program.",
+    Preparation: "MC",
+    Review: "RT",
   },
   {
-    conclusions: "The work performed and the results obtained have been adequately documented.",
-    preparation: "MC",
-    review: "SH",
+    Conclusions: "The work performed and the results obtained have been adequately documented.",
+    Preparation: "MC",
+    Review: "SH",
   },
   {
-    conclusions: "All necessary information has been collected for the presentation and disclosure in the financial statements.",
+    Conclusions: "All necessary information has been collected for the presentation and disclosure in the financial statements.",
   },
   {
-    conclusions: "Based on audit procedures performed, the above objectives have been met and without any material exception noted.",
+    Conclusions: "Based on audit procedures performed, the above objectives have been met and without any material exception noted.",
   },
 ];
+
+const vouchingData = [
+{
+    "Voucher No.": "",
+    "Recording data" : "MC",
+    "Description": "RT",
+	"Corresponding account ": "",
+	"Amount": "",
+	"Items to check": "",
+	"Evidence": "sdfds",
+  },
+  
+]
 ---
 
 <Layout>
 	<!-- <Welcome /> -->
 	<Table title="Page #1 Conclusion" team={team} conclusions={conclusions} headers={headers}/>
+	<Table title="Page #1 Test" team={team} conclusions={vouchingData} headers={vouchingHeaders}/>
 </Layout>
