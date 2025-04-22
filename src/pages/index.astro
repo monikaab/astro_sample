@@ -1,66 +1,11 @@
 ---
-import Table from "../components/Table/Table";
-import { conclusionColumns } from "../columns/conclusionColumns";
-import { vouchingColumns } from "../columns/vouchingColumns";
 import Layout from "../layouts/Layout.astro";
+import ConclusionTable from "../components/ConclusionTable";
+import VouchingTable from "../components/VouchingTable";
 import "../styles/global.css";
-
-const team = [
-  { initials: "MC", color: "#f97316" },
-  { initials: "RT", color: "#10b981" },
-  { initials: "SH", color: "#14b8a6" },
-];
-
-const conclusions = [
-  {
-    conclusions:
-      "The work has been performed in accordance with the audit program.",
-    Preparation: "MC",
-    Review: "RT",
-  },
-  {
-    conclusions:
-      "The work performed and the results obtained have been adequately documented.",
-    Preparation: "MC",
-    Review: "SH",
-  },
-  {
-    conclusions:
-      "All necessary information has been collected for the presentation and disclosure in the financial statements.",
-  },
-  {
-    conclusions:
-      "Based on audit procedures performed, the above objectives have been met and without any material exception noted.",
-  },
-];
-
-const vouchingData = [
-  {
-    "Voucher No.": "200000536",
-    "Recording data": "2024-12-01",
-    Description: "Payment for services",
-    "Corresponding account": "Accounts Payable",
-    amountRecorded: 1000,
-    amountVerified: 950,
-    checkInvoice: "Yes",
-    checkContract: "No",
-    Evidence: "Attached",
-  },
-];
 ---
 
 <Layout>
-  <Table
-    title="Page #1 Conclusion"
-    team={team}
-    data={conclusions}
-    columns={conclusionColumns}
-  />
-
-  <Table
-    title="Page #1 Test"
-    team={team}
-    data={vouchingData}
-    columns={vouchingColumns}
-  />
+  <ConclusionTable />
+  <VouchingTable />
 </Layout>

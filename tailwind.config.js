@@ -23,7 +23,8 @@ export default {
           900: '#234E52'
         },
         purple: {
-          80: "#F3F4F6"
+          80: "#F3F4F6",
+          400: "#8A2BE2",
         },
         orang: {
           100: '#E89F51'

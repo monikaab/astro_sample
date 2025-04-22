@@ -73,17 +73,17 @@ export const vouchingColumns: ColumnDef<any, any>[] = [
       },
     ],
   },
-
   {
     accessorKey: "Evidence",
     header: () => "Evidence",
-    cell: (info) =>
-      info.getValue() ? (
-        <span class="bg-blue-500 text-white text-xs font-medium px-2 py-1 rounded">
-          {info.getValue()}
-        </span>
-      ) : (
-        "-"
-      ),
+    cell: (info) => (
+      <div class="flex justify-end pr-2">
+        <input
+          type="checkbox"
+          checked={!!info.getValue()}
+          class="w-4 h-4 accent-blue-600"
+        />
+      </div>
+    ),
   },
 ];
