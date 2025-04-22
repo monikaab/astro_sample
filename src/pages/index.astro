@@ -1,53 +1,49 @@
 ---
-import Table from '../components/Table.tsx';
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Table from "../components/Table/Table";
+import { conclusionColumns } from "../columns/conclusionColumns";
+import { vouchingColumns } from "../columns/vouchingColumns";
+import Layout from "../layouts/Layout.astro";
+import "../styles/global.css"
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 const team = [
   { initials: "MC", color: "#f97316" },
   { initials: "RT", color: "#10b981" },
   { initials: "SH", color: "#14b8a6" },
 ];
 
-const headers = ["Conclusions", "Preparation", "Review"];
-const vouchingHeaders = ["Voucher No.", "Recording data", "Description", "Corresponding account", "Amount", "Items to check", "Evidence"]
 const conclusions = [
   {
-    Conclusions: "The work has been performed in accordance with the audit program.",
+    conclusions: "The work has been performed in accordance with the audit program.",
     Preparation: "MC",
     Review: "RT",
   },
   {
-    Conclusions: "The work performed and the results obtained have been adequately documented.",
+    conclusions: "The work performed and the results obtained have been adequately documented.",
     Preparation: "MC",
     Review: "SH",
   },
   {
-    Conclusions: "All necessary information has been collected for the presentation and disclosure in the financial statements.",
+    conclusions: "All necessary information has been collected for the presentation and disclosure in the financial statements.",
   },
   {
-    Conclusions: "Based on audit procedures performed, the above objectives have been met and without any material exception noted.",
+    conclusions: "Based on audit procedures performed, the above objectives have been met and without any material exception noted.",
   },
 ];
 
 const vouchingData = [
-{
-    "Voucher No.": "",
-    "Recording data" : "MC",
-    "Description": "RT",
-	"Corresponding account ": "",
-	"Amount": "",
-	"Items to check": "",
-	"Evidence": "sdfds",
+  {
+    "Voucher No.": "001-A",
+    "Recording data": "2025-04-01",
+    "Description": "Office Supplies Purchase",
+    "Corresponding account": "Accounts Payable",
+    "Amount": "250.00",
+    "Items to check": "Invoice, Payment Receipt",
+    "Evidence": "Attached",
   },
-  
-]
+];
 ---
 
 <Layout>
-	<!-- <Welcome /> -->
-	<Table title="Page #1 Conclusion" team={team} conclusions={conclusions} headers={headers}/>
-	<Table title="Page #1 Test" team={team} conclusions={vouchingData} headers={vouchingHeaders}/>
+  <Table title="Page #1 Conclusion" team={team} data={conclusions} columns={conclusionColumns} />
+  <Table title="Page #1 Test" team={team} data={vouchingData} columns={vouchingColumns} />
 </Layout>
