@@ -27,11 +27,18 @@ export const conclusionColumns: ColumnDef<any, any>[] = [
     header: () => "Review",
     cell: (info) =>
       info.getValue() ? (
-        <Capsule
-          text={info.getValue()}
-          color="bg-green-500"
-          icon={<img src={checkIcon.src} alt="check" class="w-2 h-2" />}
-        />
+        <div class="flex gap-1">
+          <Capsule
+            text={info.getValue()}
+            color="bg-green-500"
+            icon={<img src={checkIcon.src} alt="check" class="w-2 h-2" />}
+          />
+          <Capsule
+            text="SH"
+            color="bg-blue-500"
+            icon={<img src={checkIcon.src} alt="check" class="w-2 h-2" />}
+          />
+        </div>
       ) : (
         "-"
       ),

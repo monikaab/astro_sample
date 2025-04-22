@@ -1,9 +1,9 @@
-// columns/vouchingColumns.ts
 import type { ColumnDef } from "@tanstack/solid-table";
 
 export const vouchingColumns: ColumnDef<any, any>[] = [
   {
-    accessorKey: "Voucher No.",
+    id: "voucherNo",
+    accessorFn: (row) => row["Voucher No."],
     header: () => "Voucher No.",
     cell: (info) => info.getValue() || "-",
   },
@@ -22,16 +22,58 @@ export const vouchingColumns: ColumnDef<any, any>[] = [
     header: () => "Corresponding account",
     cell: (info) => info.getValue() || "-",
   },
+
+  // Grouped Column: Amount
   {
-    accessorKey: "Amount",
+    id: "amountGroup",
     header: () => "Amount",
-    cell: (info) => info.getValue() || "-",
+    columns: [
+      {
+        accessorKey: "DR",
+        header: () => "DR",
+        cell: (info) => info.getValue() || "-",
+      },
+      {
+        accessorKey: "CR",
+        header: () => "CR",
+        cell: (info) => info.getValue() || "-",
+      },
+    ],
   },
+
+  // Grouped Column: Items to Check
   {
-    accessorKey: "Items to check",
+    id: "itemsToCheckGroup",
     header: () => "Items to check",
-    cell: (info) => info.getValue() || "-",
+    columns: [
+      {
+        accessorKey: "A",
+        header: () => "A",
+        cell: (info) => info.getValue() || "-",
+      },
+      {
+        accessorKey: "B",
+        header: () => "B",
+        cell: (info) => info.getValue() || "-",
+      },
+      {
+        accessorKey: "C",
+        header: () => "C",
+        cell: (info) => info.getValue() || "-",
+      },
+      {
+        accessorKey: "D",
+        header: () => "D",
+        cell: (info) => info.getValue() || "-",
+      },
+      {
+        accessorKey: "E",
+        header: () => "E",
+        cell: (info) => info.getValue() || "-",
+      },
+    ],
   },
+
   {
     accessorKey: "Evidence",
     header: () => "Evidence",

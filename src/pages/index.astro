@@ -3,7 +3,7 @@ import Table from "../components/Table/Table";
 import { conclusionColumns } from "../columns/conclusionColumns";
 import { vouchingColumns } from "../columns/vouchingColumns";
 import Layout from "../layouts/Layout.astro";
-import "../styles/global.css"
+import "../styles/global.css";
 
 const team = [
   { initials: "MC", color: "#f97316" },
@@ -13,38 +13,54 @@ const team = [
 
 const conclusions = [
   {
-    conclusions: "The work has been performed in accordance with the audit program.",
+    conclusions:
+      "The work has been performed in accordance with the audit program.",
     Preparation: "MC",
     Review: "RT",
   },
   {
-    conclusions: "The work performed and the results obtained have been adequately documented.",
+    conclusions:
+      "The work performed and the results obtained have been adequately documented.",
     Preparation: "MC",
     Review: "SH",
   },
   {
-    conclusions: "All necessary information has been collected for the presentation and disclosure in the financial statements.",
+    conclusions:
+      "All necessary information has been collected for the presentation and disclosure in the financial statements.",
   },
   {
-    conclusions: "Based on audit procedures performed, the above objectives have been met and without any material exception noted.",
+    conclusions:
+      "Based on audit procedures performed, the above objectives have been met and without any material exception noted.",
   },
 ];
 
 const vouchingData = [
   {
-    "Voucher No.": "001-A",
-    "Recording data": "2025-04-01",
-    "Description": "Office Supplies Purchase",
+    "Voucher No.": "200000536",
+    "Recording data": "2024-12-01",
+    Description: "Payment for services",
     "Corresponding account": "Accounts Payable",
-    "Amount": "250.00",
-    "Items to check": "Invoice, Payment Receipt",
-    "Evidence": "Attached",
+    amountRecorded: 1000,
+    amountVerified: 950,
+    checkInvoice: "Yes",
+    checkContract: "No",
+    Evidence: "Attached",
   },
 ];
 ---
 
 <Layout>
-  <Table title="Page #1 Conclusion" team={team} data={conclusions} columns={conclusionColumns} />
-  
-  <Table title="Page #1 Test" team={team} data={vouchingData} columns={vouchingColumns} />
+  <Table
+    title="Page #1 Conclusion"
+    team={team}
+    data={conclusions}
+    columns={conclusionColumns}
+  />
+
+  <Table
+    title="Page #1 Test"
+    team={team}
+    data={vouchingData}
+    columns={vouchingColumns}
+  />
 </Layout>
