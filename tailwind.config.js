@@ -7,6 +7,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+      },
       colors: {
         mint: {
           100: 'oklch(0.71 0.15 247)',
@@ -21,6 +24,9 @@ export default {
         },
         purple: {
           80: "#F3F4F6"
+        },
+        orang: {
+          100: '#E89F51'
         }
       }
     }

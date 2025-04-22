@@ -4,7 +4,7 @@ import { flexRender } from "@tanstack/solid-table";
 
 const CellComponent = <T,>({ cell }: { cell: Cell<T, unknown> }) => {
   return (
-    <td class="p-2 border border-gray-200">
+    <td class="p-1 border border-gray-200">
       {flexRender(cell.column.columnDef.cell, cell.getContext())}
     </td>
   );

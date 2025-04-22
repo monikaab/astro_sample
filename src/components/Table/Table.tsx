@@ -29,28 +29,30 @@ const TableRoot = <T extends Record<string, any>>(props: TableRootProps<T>): JSX
 
   return (
     <CardComponent title={props.title} team={props.team}>
-      <table class="w-full table-auto border-collapse">
-        <thead>
-          {table.getHeaderGroups().map((headerGroup) => (
-        <tr>
-          {headerGroup.headers.map((header) => (
-            <th class="p-2 border border-gray-200" colSpan={header.colSpan}>
-          {header.isPlaceholder
-            ? null
-            : header.column.columnDef.header?.(
-            header.getContext()
-              )}
-            </th>
-          ))}
-        </tr>
-          ))}
-        </thead>
-        <tbody>
-          {table.getRowModel().rows.map((row) => (
-        <RowComponent row={row} />
-          ))}
-        </tbody>
-      </table>
+      <div class="overflow-hidden rounded-xl border border-gray-200">
+      <table class="w-full border-separate border-spacing-0">
+          <thead class="bg-purple-80">
+            {table.getHeaderGroups().map((headerGroup) => (
+              <tr>
+                {headerGroup.headers.map((header) => (
+                  <th class="p-1 border border-gray-200 font-semibold text-sm leading-[1.5] tracking-normal" colSpan={header.colSpan}>
+                    {header.isPlaceholder
+                      ? null
+                      : header.column.columnDef.header?.(
+                        header.getContext()
+                      )}
+                  </th>
+                ))}
+              </tr>
+            ))}
+          </thead>
+          <tbody>
+            {table.getRowModel().rows.map((row) => (
+              <RowComponent row={row} />
+            ))}
+          </tbody>
+        </table>
+      </div>
     </CardComponent>
   );
 };

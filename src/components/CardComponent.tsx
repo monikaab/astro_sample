@@ -17,8 +17,8 @@ const CardComponent = (props: CardComponentProps) => {
     <div class="flex justify-center ">
       <div class="w-[90%] items-center p-4 bg-white shadow-md rounded-lg m-1">
       <div class="flex justify-between items-center mb-4">
-        <h2 class="text-lg font-semibold">{props.title}</h2>
-        <div class="flex items-center gap-1">
+        <h2 class="font-bold text-base leading-[1.5] tracking-normal">{props.title}</h2>
+        <div class="flex items-center -space-x-1">
         <For each={props.team}>
           {(member) => (
           <div

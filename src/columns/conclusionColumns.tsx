@@ -1,5 +1,6 @@
-// columns/conclusionColumns.ts
 import type { ColumnDef } from "@tanstack/solid-table";
+import Capsule from "../components/capsule"; // Adjust the import path based on your project structure
+import checkIcon from "../assets/checkIcon.svg"; // Replace with your actual check icon path
 
 export const conclusionColumns: ColumnDef<any, any>[] = [
   {
@@ -12,21 +13,25 @@ export const conclusionColumns: ColumnDef<any, any>[] = [
     header: () => "Preparation",
     cell: (info) =>
       info.getValue() ? (
-        <span class="bg-orange-300 text-white text-xs font-medium px-2 py-1 rounded">
-          {info.getValue()} ✓
-        </span>
+        <Capsule
+          text={info.getValue()}
+          color="bg-orange-400"
+          icon={<img src={checkIcon.src} alt="check" class="w-2 h-2" />}
+        />
       ) : (
         "-"
-      ),
+      )
   },
   {
     accessorKey: "Review",
     header: () => "Review",
     cell: (info) =>
       info.getValue() ? (
-        <span class="bg-green-400 text-white text-xs font-medium px-2 py-1 rounded">
-          {info.getValue()} ✓
-        </span>
+        <Capsule
+          text={info.getValue()}
+          color="bg-green-500"
+          icon={<img src={checkIcon.src} alt="check" class="w-2 h-2" />}
+        />
       ) : (
         "-"
       ),
