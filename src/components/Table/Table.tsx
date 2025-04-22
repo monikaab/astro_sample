@@ -32,22 +32,22 @@ const TableRoot = <T extends Record<string, any>>(props: TableRootProps<T>): JSX
       <table class="w-full table-auto border-collapse">
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (
-            <tr>
-              {headerGroup.headers.map((header) => (
-                <th class="p-2 border border-gray-200" colSpan={header.colSpan}>
-                  {header.isPlaceholder
-                    ? null
-                    : header.column.columnDef.header?.(
-                        header.getContext()
-                      )}
-                </th>
-              ))}
-            </tr>
+        <tr>
+          {headerGroup.headers.map((header) => (
+            <th class="p-2 border border-gray-200" colSpan={header.colSpan}>
+          {header.isPlaceholder
+            ? null
+            : header.column.columnDef.header?.(
+            header.getContext()
+              )}
+            </th>
+          ))}
+        </tr>
           ))}
         </thead>
         <tbody>
           {table.getRowModel().rows.map((row) => (
-            <RowComponent row={row} />
+        <RowComponent row={row} />
           ))}
         </tbody>
       </table>
