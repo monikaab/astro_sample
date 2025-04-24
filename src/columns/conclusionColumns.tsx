@@ -6,7 +6,7 @@ export const conclusionColumns: ColumnDef<any, any>[] = [
   {
     accessorKey: "conclusions",
     header: () => (
-      <div class="flex items-center justify-start gap-1 font-inter font-bold text-sm leading-[1.5] tracking-normal text-gray-800">
+      <div class="flex items-center justify-start gap-1 font-inter font-semibold text-sm leading-[1.5] tracking-normal text-gray-800">
         Conclusions
         </div>
     ),
@@ -21,7 +21,11 @@ export const conclusionColumns: ColumnDef<any, any>[] = [
   },
   {
     accessorKey: "Preparation",
-    header: () => "Preparation",
+    header: () => (
+      <div class="flex items-center justify-center gap-1 font-inter font-semibold text-sm leading-[1.5] tracking-normal text-gray-800">
+        Preperation
+        </div>
+    ),
     cell: (info) =>
       info.getValue() ? (
         <div class="flex justify-end gap-1">
@@ -37,7 +41,11 @@ export const conclusionColumns: ColumnDef<any, any>[] = [
   },
   {
     accessorKey: "Review",
-    header: () => "Review",
+    header: () => (
+      <div class="flex items-center justify-center gap-1 font-inter font-semibold text-sm leading-[1.5] tracking-normal text-gray-800">
+        Review
+        </div>
+    ),
     cell: (info) =>
       info.getValue() ? (
         <div class="flex justify-end gap-1">
