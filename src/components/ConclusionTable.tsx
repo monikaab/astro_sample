@@ -29,13 +29,17 @@ const conclusions = [
 ];
 
 export default function ConclusionTable() {
+  const handleClick = () => {
+    alert("Button clicked!");
+  };
+
   return (
     <Table
       title="Page #1 Conclusion"
       team={team}
       data={conclusions}
       columns={conclusionColumns}
-      rightContent={
+      renderRightContent={() => (
         <div class="flex items-center gap-2">
           <div class="flex items-center -space-x-1">
             <For each={team}>
@@ -49,11 +53,12 @@ export default function ConclusionTable() {
               )}
             </For>
           </div>
-          <button class="bg-purple-400 text-white text-sm p-1 rounded">
-            View Team
+          <button class="bg-purple-400 text-white text-sm p-1 rounded" onClick={handleClick}>View Team</button>
+          <button class="bg-orange-400 text-white text-sm p-1 rounded" onClick={handleClick}>
+            Show Team
           </button>
         </div>
-      }
+      )}
     />
   );
 }

@@ -1,4 +1,3 @@
-// components/Table/TableRoot.tsx
 import {
   createSolidTable,
   getCoreRowModel,
@@ -18,7 +17,7 @@ interface TableRootProps<T> {
   team?: TeamMember[];
   data: T[];
   columns: ColumnDef<T, any>[];
-  rightContent?: JSX.Element;
+  renderRightContent?: () => JSX.Element;
 }
 
 const TableRoot = <T extends Record<string, any>>(props: TableRootProps<T>): JSX.Element => {
@@ -29,7 +28,7 @@ const TableRoot = <T extends Record<string, any>>(props: TableRootProps<T>): JSX
   });
 
   return (
-    <CardComponent title={props.title} team={props.team} rightContent={props.rightContent}>
+    <CardComponent title={props.title} team={props.team} renderRightContent={props.renderRightContent}>
       <div class="overflow-hidden rounded-xl border border-gray-200">
         <table class="w-full border-separate border-spacing-0">
           <thead class="bg-purple-80">

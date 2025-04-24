@@ -1,5 +1,3 @@
-
-// components/VouchingTable.tsx
 import Table from "./Table/Table";
 import { vouchingColumns } from "../columns/vouchingColumns";
 
@@ -36,28 +34,30 @@ const vouchingData = [
     checkInvoice: "Yes",
     checkContract: "No",
     Evidence: "",
-  }
+  },
 ];
 
-
 export default function VouchingTable() {
+  const handleClick = () => {
+    alert("Button clicked!");
+  };
   return (
     <Table
       title="Page #1 Test"
       data={vouchingData}
       columns={vouchingColumns}
-      rightContent={
+      renderRightContent={() => (
         <div class="flex items-center gap-2">
           <input
             type="text"
             placeholder="Search..."
             class="border border-gray-300 rounded px-2 py-1 text-sm"
           />
-          <button class="bg-purple-400 text-white text-sm p-1 rounded">
+          <button onClick={handleClick} class="bg-purple-400 text-white text-sm p-1 rounded">
             Upload
           </button>
         </div>
-      }
+      )}
     />
   );
 }
