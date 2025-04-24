@@ -50,7 +50,7 @@ export default function VouchingTable() {
       renderRightContent={() => (
         <div class="flex items-center gap-2">
           <SearchInput />
-          <button onClick={handleClick} class="bg-purple-400 w-20 h-10 gap-2.5 px-2 py-1.8 rounded-lg font-inter font-small text-sm text-white leading-[1.5] tracking-normal">
+          <button onClick={handleClick} class="bg-purple-400 w-20 h-10 gap-2.5 px-4 py-1.8 rounded-lg font-inter font-small text-sm text-white leading-[1.5] tracking-normal">
             Upload
           </button>
         </div>

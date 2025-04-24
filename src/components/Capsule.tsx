@@ -9,7 +9,9 @@ type CapsuleProps = {
 const Capsule: Component<CapsuleProps> = (props) => {
   return (
     <div
-      class={`flex items-center w-10 gap-1 px-1 py-0.5 rounded-full text-white text-xs ${props.color ?? "bg-orange-400"}`}
+      class={`flex items-center w-14 h-6 gap-1.5 px-2.5 rounded-xl font-inter font-bold text-xs leading-[1.5] tracking-normal
+text-white text-xs ${props.color ?? "bg-orange-400"}`}
+
     >
       <span>{props.text}</span>
       {props.icon}
