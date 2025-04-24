@@ -1,171 +1,245 @@
 import type { ColumnDef } from "@tanstack/solid-table";
-import AvatarCircle from "../components/Avtarcircle";
-import A from "../assets/A.svg"; // Adjust the import path based on your project structure
-import B from "../assets/B.svg"; // Adjust the import path based on your project structure
-import C from "../assets/C.svg"; // Adjust the import path based on your project structure  
-import D from "../assets/D.svg"; // Adjust the import path based on your project structure
-import E from "../assets/E.svg"; // Adjust the import path based on your project structure
+import sortIcon from "../assets/sorting.svg";
+import A from "../assets/A.svg";
+import B from "../assets/B.svg";
+import C from "../assets/C.svg";
+import D from "../assets/D.svg";
+import E from "../assets/E.svg";
 
 export const vouchingColumns: ColumnDef<any, any>[] = [
   {
     id: "voucherNo",
     accessorFn: (row) => row["Voucher No."],
-    header: () => "Voucher No.",
-    cell: (info) => info.getValue() ? (
-      <div class="flex gap-1 Justify-center font-inter font-normal text-xs leading-[1.5] tracking-normal align-middle"
->
-        {info.getValue()}
+    enableSorting: true,
+    header: ({ column }) => (
+      <div
+        class="cursor-pointer flex items-center justify-center gap-1 font-inter font-semibold text-xs leading-[1.5] tracking-normal text-gray-800"
+        onClick={() => column.toggleSorting()}
+      >
+        Voucher No.
+        <img src={sortIcon.src} alt="sort" class="w-3 h-3" />
       </div>
-    ) : (
-      "-"
-    )
+    ),
+    cell: (info) =>
+      info.getValue() ? (
+        <div class="flex gap-1 justify-center font-inter font-normal text-xs leading-[1.5] tracking-normal align-middle">
+          {info.getValue()}
+        </div>
+      ) : (
+        ""
+      ),
   },
   {
     accessorKey: "Recording data",
-    header: () => "Recording data",
-    cell: (info) => info.getValue() ? (
-      <div class="flex gap-1 justify-end font-inter font-normal text-xs leading-[1.5] tracking-normal align-middle"
->
-        {info.getValue()}
+    enableSorting: true,
+    header: ({ column }) => (
+      <div
+        class="cursor-pointer flex items-center justify-end gap-1 font-inter font-semibold text-xs leading-[1.5] tracking-normal text-gray-800"
+        onClick={() => column.toggleSorting()}
+      >
+        Recording data
+        <img src={sortIcon.src} alt="sort" class="w-3 h-3" />
       </div>
-    ) : (
-      "-"
-    )
+    ),
+    cell: (info) =>
+      info.getValue() ? (
+        <div class="flex gap-1 justify-end font-inter font-normal text-xs leading-[1.5] tracking-normal align-middle">
+          {info.getValue()}
+        </div>
+      ) : (
+        ""
+      ),
   },
   {
     accessorKey: "Description",
-    header: () => "Description",
-    cell: (info) => info.getValue() ? (
-      <div class="flex gap-1 font-inter font-normal text-xs leading-[1.5] tracking-normal align-middle"
->
-        {info.getValue()}
+    enableSorting: true,
+    header: ({ column }) => (
+      <div
+        class="cursor-pointer flex items-center justify-center gap-1 font-inter font-semibold text-xs leading-[1.5] tracking-normal text-gray-800"
+        onClick={() => column.toggleSorting()}
+      >
+        Description
+        <img src={sortIcon.src} alt="sort" class="w-3 h-3" />
       </div>
-    ) : (
-      "-"
-    )
+    ),
+    cell: (info) =>
+      info.getValue() ? (
+        <div class="flex gap-1 font-inter justify-center font-normal text-xs leading-[1.5] tracking-normal align-middle">
+          {info.getValue()}
+        </div>
+      ) : (
+        ""
+      ),
   },
   {
     accessorKey: "Corresponding account",
-    header: () => "Corresponding account",
-    cell: (info) => info.getValue() ? (
-      <div class="flex gap-1 font-inter font-normal text-xs leading-[1.5] tracking-normal align-middle"
->
-        {info.getValue()}
+    enableSorting: true,
+    header: ({ column }) => (
+      <div
+        class="cursor-pointer flex items-center justify-center gap-1 font-inter font-semibold text-xs leading-[1.5] tracking-normal text-gray-800"
+        onClick={() => column.toggleSorting()}
+      >
+        Corresponding account
+        <img src={sortIcon.src} alt="sort" class="w-3 h-3" />
       </div>
-    ) : (
-      "-"
-    )
+    ),
+    cell: (info) =>
+      info.getValue() ? (
+        <div class="flex gap-1 font-inter justify-center font-normal text-xs leading-[1.5] tracking-normal align-middle">
+          {info.getValue()}
+        </div>
+      ) : (
+        ""
+      ),
   },
-
-  // Grouped Column: Amount
   {
     id: "amountGroup",
     header: () => (
-      <div class="flex items-center justify-center font-inter font-semibold text-xs leading-[1.5] tracking-normal text-gray-800">
+      <div class="bg-gray-111 flex items-center justify-center font-inter font-semibold text-xs leading-[1.5] tracking-normal text-gray-800">
         Amount
-        </div>
+      </div>
     ),
     columns: [
       {
         accessorKey: "DR",
-        header: () => "DR",
-        cell: (info) => info.getValue() ? (
-          <div class="flex gap-1 font-inter font-normal text-xs leading-[1.5] tracking-normal align-middle"
-    >
-            {info.getValue()}
-          </div>
-        ) : (
-          "-"
-        )
+        header: ({ column }) => (<div
+          class="cursor-pointer flex items-center justify-center gap-1 font-inter font-semibold text-xs leading-[1.5] tracking-normal text-gray-800"
+          onClick={() => column.toggleSorting()}
+        >
+          DR
+          <img src={sortIcon.src} alt="sort" class="w-3 h-3" />
+        </div>
+        ),
+        cell: (info) =>
+          info.getValue() ? (
+            <div class="flex gap-1 font-inter font-normal text-xs leading-[1.5] tracking-normal align-middle">
+              {info.getValue()}
+            </div>
+          ) : (
+            ""
+          ),
       },
       {
         accessorKey: "CR",
-        header: () => "CR",
-        cell: (info) => info.getValue() ? (
-          <div class="flex gap-1 font-inter font-normal text-xs leading-[1.5] tracking-normal align-middle"
-    >
-            {info.getValue()}
-          </div>
-        ) : (
-          "-"
-        )
+        header: ({ column }) => (<div
+          class="cursor-pointer flex items-center justify-center gap-1 font-inter font-semibold text-xs leading-[1.5] tracking-normal text-gray-800"
+          onClick={() => column.toggleSorting()}
+        >
+          CR
+          <img src={sortIcon.src} alt="sort" class="w-3 h-3" />
+        </div>
+        ),
+        cell: (info) =>
+          info.getValue() ? (
+            <div class="flex gap-1 font-inter font-normal text-xs leading-[1.5] tracking-normal align-middle">
+              {info.getValue()}
+            </div>
+          ) : (
+            ""
+          ),
       },
     ],
   },
-
-  // Grouped Column: Items to Check
   {
     id: "itemsToCheckGroup",
-    header: () => (<div class="flex items-center justify-center font-inter font-semibold text-xs leading-[1.5] tracking-normal text-gray-800">
-      Items to check
+    header: () => (
+      <div class="flex bg-gray-111 items-center justify-center font-inter font-semibold text-xs leading-[1.5] tracking-normal text-gray-800">
+        Items to check
       </div>
     ),
     columns: [
       {
         accessorKey: "A",
-        header: () => <img src={A.src} alt="check" class="w-5 h-5" />,
-        cell: (info) => info.getValue() ? (
-          <div class="flex gap-1 font-inter font-normal text-xs leading-[1.5] tracking-normal align-middle"
-    >
-            {info.getValue()}
+        header: () => (
+          <div class="flex justify-center">
+            <img src={A.src} alt="check" class="w-5 h-5" />
           </div>
-        ) : (
-          "-"
-        )
+        ),
+        cell: (info) =>
+          info.getValue() ? (
+            <div class="flex gap-1 font-inter font-normal text-xs leading-[1.5] tracking-normal align-middle">
+              {info.getValue()}
+            </div>
+          ) : (
+            ""
+          ),
       },
       {
         accessorKey: "B",
-        header: () => <img src={B.src} alt="check" class="w-5 h-5" />,
-        cell: (info) => info.getValue() ? (
-          <div class="flex gap-1 font-inter font-normal text-xs leading-[1.5] tracking-normal align-middle"
-    >
-            {info.getValue()}
+        header: () => (
+          <div class="flex justify-center">
+            <img src={B.src} alt="check" class="w-5 h-5" />
           </div>
-        ) : (
-          "-"
-        )
+        ),
+        cell: (info) =>
+          info.getValue() ? (
+            <div class="flex gap-1 font-inter font-normal text-xs leading-[1.5] tracking-normal align-middle">
+              {info.getValue()}
+            </div>
+          ) : (
+            ""
+          ),
       },
       {
         accessorKey: "C",
-        header: () => <img src={C.src} alt="check" class="w-5 h-5" />,
-        cell: (info) => info.getValue() ? (
-          <div class="flex gap-1 font-inter font-normal text-xs leading-[1.5] tracking-normal align-middle"
-    >
-            {info.getValue()}
+        header: () => (
+          <div class="flex justify-center">
+            <img src={C.src} alt="check" class="w-5 h-5" />
           </div>
-        ) : (
-          "-"
-        )
+        ),
+        cell: (info) =>
+          info.getValue() ? (
+            <div class="flex gap-1 font-inter font-normal text-xs leading-[1.5] tracking-normal align-middle">
+              {info.getValue()}
+            </div>
+          ) : (
+            ""
+          ),
       },
       {
         accessorKey: "D",
-        header: () => <img src={D.src} alt="check" class="w-5 h-5" />,
-        cell: (info) => info.getValue() ? (
-          <div class="flex gap-1 font-inter font-normal text-xs leading-[1.5] tracking-normal align-middle"
-    >
-            {info.getValue()}
+        header: () => (
+          <div class="flex justify-center">
+            <img src={D.src} alt="check" class="w-5 h-5" />
           </div>
-        ) : (
-          "-"
-        )
+        ),
+        cell: (info) =>
+          info.getValue() ? (
+            <div class="flex gap-1 font-inter font-normal text-xs leading-[1.5] tracking-normal align-middle">
+              {info.getValue()}
+            </div>
+          ) : (
+            ""
+          ),
       },
       {
         accessorKey: "E",
-        header: () => <img src={E.src} alt="check" class="w-5 h-5"  />,
-        cell: (info) => info.getValue() ? (
-          <div class="flex gap-1 font-inter font-normal text-xs leading-[1.5] tracking-normal align-middle"
-    >
-            {info.getValue()}
+        header: () => (
+          <div class="flex justify-center">
+            <img src={E.src} alt="check" class="w-5 h-5" />
           </div>
-        ) : (
-          "-"
-        )
+        ),
+        cell: (info) =>
+          info.getValue() ? (
+            <div class="flex gap-1 font-inter font-normal text-xs leading-[1.5] tracking-normal align-middle">
+              {info.getValue()}
+            </div>
+          ) : (
+            ""
+          ),
       },
     ],
   },
   {
     accessorKey: "Evidence",
-    header: () => "Evidence",
+    header:  ({ column }) => (<div
+      class="cursor-pointer w-40 flex items-center justify-center gap-1 font-inter font-semibold text-xs leading-[1.5] tracking-normal text-gray-800 text-center"
+      onClick={() => column.toggleSorting()}
+    >
+      Evidence
+      <img src={sortIcon.src} alt="sort" class="w-3 h-3" />
+    </div>
+    ),
     cell: (info) => (
       <div class="flex justify-end pr-2">
         <input

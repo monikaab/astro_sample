@@ -1,11 +1,14 @@
 import {
   createSolidTable,
   getCoreRowModel,
+  getSortedRowModel,
   type ColumnDef,
+  type SortingState,
 } from "@tanstack/solid-table";
 import type { JSX } from "solid-js";
 import CardComponent from "../CardComponent";
 import RowComponent from "./RowComponent";
+import { createSignal } from "solid-js";
 
 interface TeamMember {
   initials: string;
@@ -21,10 +24,18 @@ interface TableRootProps<T> {
 }
 
 const TableRoot = <T extends Record<string, any>>(props: TableRootProps<T>): JSX.Element => {
+  const [sorting, setSorting] = createSignal<SortingState>([]);
   const table = createSolidTable({
     data: props.data,
     columns: props.columns,
+    state: {
+      get sorting() {
+        return sorting();
+      },
+    },
+    onSortingChange: setSorting,
     getCoreRowModel: getCoreRowModel(),
+    getSortedRowModel: getSortedRowModel(),
   });
 
   return (

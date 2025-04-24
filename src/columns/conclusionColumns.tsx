@@ -16,7 +16,7 @@ export const conclusionColumns: ColumnDef<any, any>[] = [
         {info.getValue()}
       </div>
     ) : (
-      "-"
+      ""
     )
   },
   {
@@ -36,7 +36,7 @@ export const conclusionColumns: ColumnDef<any, any>[] = [
           />
         </div>
       ) : (
-        "-"
+        ""
       )
   },
   {
@@ -61,7 +61,7 @@ export const conclusionColumns: ColumnDef<any, any>[] = [
           />
         </div>
       ) : (
-        "-"
+        ""
       ),
   },
 ];

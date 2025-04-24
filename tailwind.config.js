@@ -59,6 +59,9 @@ module.exports = {
         sans: ['Inter', 'sans-serif'],
       },
       colors: {
+        gray: {
+          111: "#777695"
+        },
         mint: {
           100: 'oklch(0.71 0.15 247)',
           200: 'oklch(0.69 0.10 186)',
