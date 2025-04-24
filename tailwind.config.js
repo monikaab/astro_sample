@@ -52,6 +52,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+      },
       colors: {
         mint: {
           100: 'oklch(0.71 0.15 247)',
