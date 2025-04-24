@@ -41,7 +41,9 @@ const TableRoot = <T extends Record<string, any>>(props: TableRootProps<T>): JSX
                   >
                     {header.isPlaceholder
                       ? null
-                      : header.column.columnDef.header?.(header.getContext())}
+                      : typeof header.column.columnDef.header === "function"
+                      ? header.column.columnDef.header(header.getContext())
+                      : header.column.columnDef.header}
                   </th>
                 ))}
               </tr>

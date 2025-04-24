@@ -1,5 +1,6 @@
 import Table from "./Table/Table";
 import { vouchingColumns } from "../columns/vouchingColumns";
+import SearchInput from "./SearchInput";
 
 const vouchingData = [
   {
@@ -48,12 +49,8 @@ export default function VouchingTable() {
       columns={vouchingColumns}
       renderRightContent={() => (
         <div class="flex items-center gap-2">
-          <input
-            type="text"
-            placeholder="Search..."
-            class="border border-gray-300 rounded px-2 py-1 text-sm"
-          />
-          <button onClick={handleClick} class="bg-purple-400 text-white text-sm p-1 rounded">
+          <SearchInput />
+          <button onClick={handleClick} class="bg-purple-400 w-20 h-10 gap-2.5 px-2 py-1.8 rounded-lg font-inter font-small text-sm text-white leading-[1.5] tracking-normal">
             Upload
           </button>
         </div>
