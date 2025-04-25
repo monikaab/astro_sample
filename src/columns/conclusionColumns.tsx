@@ -1,6 +1,8 @@
 import type { ColumnDef } from "@tanstack/solid-table";
 import Capsule from "../components/Capsule"; // Adjust the import path based on your project structure
 import checkIcon from "../assets/checkIcon.svg"; // Replace with your actual check icon path
+import dots from "../assets/more_horiz.svg"; // Replace with your actual dots icon path
+import misc from "../assets/misc.svg"; // Replace with your actual misc icon path
 
 export const conclusionColumns: ColumnDef<any, any>[] = [
   {
@@ -70,5 +72,21 @@ export const conclusionColumns: ColumnDef<any, any>[] = [
       ) : (
         ""
       ),
+  },
+  {
+    accessorKey: "Review",
+    header: () => (
+      <div class="flex justify-center">
+        <img src={misc.src} alt="check" class="w-6 h-6" />
+      </div>
+    ),
+    meta: {
+      class: "w-11"
+    },
+    cell: () => (
+      <div class="flex justify-center">
+        <img src={dots.src} alt="check" class="w-6 h-6" />
+      </div>
+    )
   }
 ];
