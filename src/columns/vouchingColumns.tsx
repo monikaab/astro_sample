@@ -95,10 +95,13 @@ export const vouchingColumns: ColumnDef<any, any>[] = [
   {
     id: "amountGroup",
     header: () => (
-      <div class="bg-gray-111 flex items-center justify-center font-inter font-semibold text-xs leading-[1.5] tracking-normal text-gray-800">
+      <div class="flex items-center justify-center font-inter font-semibold text-xs leading-[1.5] tracking-normal text-white">
         Amount
       </div>
     ),
+    meta: {
+      class: "bg-gray-111"
+    },
     columns: [
       {
         accessorKey: "DR",
@@ -143,10 +146,13 @@ export const vouchingColumns: ColumnDef<any, any>[] = [
   {
     id: "itemsToCheckGroup",
     header: () => (
-      <div class="flex bg-gray-111 items-center justify-center font-inter font-semibold text-xs leading-[1.5] tracking-normal text-gray-800">
+      <div class="flex items-center justify-center font-inter font-semibold text-xs leading-[1.5] tracking-normal text-white">
         Items to check
       </div>
     ),
+    meta: {
+      class: "bg-gray-111"
+    },
     columns: [
       {
         accessorKey: "A",
@@ -232,13 +238,16 @@ export const vouchingColumns: ColumnDef<any, any>[] = [
   },
   {
     accessorKey: "Evidence",
-    header:  ({ column }) => (<div
-      class="cursor-pointer w-40 flex items-center justify-center gap-1 font-inter font-semibold text-xs leading-[1.5] tracking-normal text-gray-800 text-center"
-      onClick={() => column.toggleSorting()}
-    >
-      Evidence
-      <img src={sortIcon.src} alt="sort" class="w-3 h-3" />
-    </div>
+    header: ({ column }) => (
+      <div class="flex justify-center">
+        <div
+          class="cursor-pointer w-50 flex items-center justify-center gap-1 font-inter font-semibold text-xs leading-[1.5] tracking-normal text-gray-800 text-center"
+          onClick={() => column.toggleSorting()}
+        >
+          Evidence
+          <img src={sortIcon.src} alt="sort" class="w-3 h-3" />
+        </div>
+      </div>
     ),
     cell: (info) => (
       <div class="flex justify-end pr-2">

@@ -53,7 +53,8 @@ const TableRoot = <T extends Record<string, any>>(props: TableRootProps<T>): JSX
               <tr>
                 {headerGroup.headers.map((header) => (
                   <th
-                    class="p-1 border border-gray-200 font-semibold text-sm leading-[1.5] tracking-normal"
+                  // (header.column.columnDef.meta as { class?: string } | undefined)?.class ?? ""
+                    class={`p-1 border border-gray-200 font-semibold text-sm leading-[1.5] tracking-normal ${((header.column.columnDef.meta as { class?: string }) || {}).class ?? ""}`}
                     colSpan={header.colSpan}
                   >
                     {header.isPlaceholder
