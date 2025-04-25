@@ -22,6 +22,7 @@ interface TableRootProps<T> {
   columns: ColumnDef<T, any>[];
   renderRightContent?: () => JSX.Element;
   renderLeftContent?: () => JSX.Element;
+  renderFooterRow?: () => JSX.Element;
 }
 
 const TableRoot = <T extends Record<string, any>>(props: TableRootProps<T>): JSX.Element => {
@@ -53,15 +54,15 @@ const TableRoot = <T extends Record<string, any>>(props: TableRootProps<T>): JSX
               <tr>
                 {headerGroup.headers.map((header) => (
                   <th
-                  // (header.column.columnDef.meta as { class?: string } | undefined)?.class ?? ""
+                    // (header.column.columnDef.meta as { class?: string } | undefined)?.class ?? ""
                     class={`p-1 border border-gray-200 font-semibold text-sm leading-[1.5] tracking-normal ${((header.column.columnDef.meta as { class?: string }) || {}).class ?? ""}`}
                     colSpan={header.colSpan}
                   >
                     {header.isPlaceholder
                       ? null
                       : typeof header.column.columnDef.header === "function"
-                      ? header.column.columnDef.header(header.getContext())
-                      : header.column.columnDef.header}
+                        ? header.column.columnDef.header(header.getContext())
+                        : header.column.columnDef.header}
                   </th>
                 ))}
               </tr>
@@ -72,6 +73,14 @@ const TableRoot = <T extends Record<string, any>>(props: TableRootProps<T>): JSX
               <RowComponent row={row} />
             ))}
           </tbody>
+          {props.renderFooterRow && (
+            <tfoot class="bg-gray-50">
+              <tr>
+                {props.renderFooterRow()}
+              </tr>
+            </tfoot>
+          )}
+
         </table>
       </div>
     </CardComponent>
