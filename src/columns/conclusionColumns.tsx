@@ -27,6 +27,9 @@ export const conclusionColumns: ColumnDef<any, any>[] = [
         Preperation
         </div>
     ),
+    meta: {
+      class: "w-25"
+    },
     cell: (info) =>
       info.getValue() ? (
         <div class="flex justify-end gap-1">
@@ -47,6 +50,9 @@ export const conclusionColumns: ColumnDef<any, any>[] = [
         Review
         </div>
     ),
+    meta: {
+      class: "w-33"
+    },
     cell: (info) =>
       info.getValue() ? (
         <div class="flex justify-end gap-1">
