@@ -5,6 +5,7 @@ import B from "../assets/B.svg";
 import C from "../assets/C.svg";
 import D from "../assets/D.svg";
 import E from "../assets/E.svg";
+import dropDown from "../assets/dropdown.svg";
 
 export const vouchingColumns: ColumnDef<any, any>[] = [
   {
@@ -247,15 +248,14 @@ export const vouchingColumns: ColumnDef<any, any>[] = [
           Evidence
           <img src={sortIcon.src} alt="sort" class="w-3 h-3" />
         </div>
+        <div class="flex justify-end gap-1 items-center">
+          <img src={dropDown.src} alt="sort" class="w-4 h-4" />
+        </div>
       </div>
     ),
     cell: (info) => (
-      <div class="flex justify-end pr-2">
-        <input
-          type="checkbox"
-          checked={!!info.getValue()}
-          class="w-4 h-4 accent-blue-600"
-        />
+      <div class="flex justify-end gap-1 px-4">
+        <img src={dropDown.src} alt="sort" class="w-4 h-4" />
       </div>
     ),
   },
