@@ -6,7 +6,8 @@ export const conclusionColumns: ColumnDef<any, any>[] = [
   {
     accessorKey: "conclusions",
     header: () => (
-      <div class="flex items-center justify-start gap-1 font-inter font-semibold text-sm leading-[1.5] tracking-normal text-gray-800">
+      // "cursor-pointer flex items-center justify-center gap-1 font-inter font-semibold text-xs leading-[1.5] tracking-normal text-gray-800"
+      <div class="cursor-pointer flex items-center justify-start gap-1 font-inter font-semibold text-sm leading-[1.5] tracking-normal text-gray-700">
         Conclusions
         </div>
     ),
@@ -22,7 +23,7 @@ export const conclusionColumns: ColumnDef<any, any>[] = [
   {
     accessorKey: "Preparation",
     header: () => (
-      <div class="flex items-center justify-center gap-1 font-inter font-semibold text-sm leading-[1.5] tracking-normal text-gray-800">
+      <div class="cursor-pointer flex items-center justify-center gap-1 font-inter font-semibold text-sm leading-[1.5] tracking-normal text-gray-700">
         Preperation
         </div>
     ),
@@ -42,7 +43,7 @@ export const conclusionColumns: ColumnDef<any, any>[] = [
   {
     accessorKey: "Review",
     header: () => (
-      <div class="flex items-center justify-center gap-1 font-inter font-semibold text-sm leading-[1.5] tracking-normal text-gray-800">
+      <div class="cursor-pointer flex items-center justify-center gap-1 font-inter font-semibold text-sm leading-[1.5] tracking-normal text-gray-700">
         Review
         </div>
     ),
@@ -63,5 +64,5 @@ export const conclusionColumns: ColumnDef<any, any>[] = [
       ) : (
         ""
       ),
-  },
+  }
 ];

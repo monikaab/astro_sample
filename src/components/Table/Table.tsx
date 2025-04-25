@@ -55,7 +55,7 @@ const TableRoot = <T extends Record<string, any>>(props: TableRootProps<T>): JSX
                 {headerGroup.headers.map((header) => (
                   <th
                     // (header.column.columnDef.meta as { class?: string } | undefined)?.class ?? ""
-                    class={`p-1 border border-gray-200 font-semibold text-sm leading-[1.5] tracking-normal ${((header.column.columnDef.meta as { class?: string }) || {}).class ?? ""}`}
+                    class={`p-1 border border-gray-300 font-semibold text-sm leading-[1.5] tracking-normal ${((header.column.columnDef.meta as { class?: string }) || {}).class ?? ""}`}
                     colSpan={header.colSpan}
                   >
                     {header.isPlaceholder
@@ -74,7 +74,7 @@ const TableRoot = <T extends Record<string, any>>(props: TableRootProps<T>): JSX
             ))}
           </tbody>
           {props.renderFooterRow && (
-            <tfoot class="bg-gray-50">
+            <tfoot class="bg-purple-80">
               <tr>
                 {props.renderFooterRow()}
               </tr>
