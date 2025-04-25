@@ -54,7 +54,7 @@ export default function ConclusionTable() {
             </For>
           </div>
           <button
-            class="bg-purple-400 w-26 h-10 gap-2.5 px-2 py-1.8 rounded-lg font-inter font-small text-sm text-white leading-[1.5] tracking-normal"
+            class="bg-purple-400 w-26 h-10 gap-2.5 px-3 py-1.8 rounded-lg font-inter font-small text-sm text-white leading-[1.5] tracking-normal"
             onClick={handleClick}>
             View Team
           </button>

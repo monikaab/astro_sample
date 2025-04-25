@@ -84,6 +84,9 @@ export const vouchingColumns: ColumnDef<any, any>[] = [
         <img src={sortIcon.src} alt="sort" class="w-3 h-3" />
       </div>
     ),
+    meta: {
+      class: "w-45"
+    },
     cell: (info) =>
       info.getValue() ? (
         <div class="flex gap-1 font-inter justify-center font-normal text-xs leading-[1.5] tracking-normal align-middle">
@@ -114,6 +117,9 @@ export const vouchingColumns: ColumnDef<any, any>[] = [
           <img src={sortIcon.src} alt="sort" class="w-3 h-3" />
         </div>
         ),
+        meta: {
+          class: "w-20"
+        },
         cell: (info) =>
           info.getValue() ? (
             <div class="flex gap-1 font-inter font-normal text-xs leading-[1.5] tracking-normal align-middle">
@@ -133,6 +139,9 @@ export const vouchingColumns: ColumnDef<any, any>[] = [
           <img src={sortIcon.src} alt="sort" class="w-3 h-3" />
         </div>
         ),
+        meta: {
+          class: "w-20"
+        },
         cell: (info) =>
           info.getValue() ? (
             <div class="flex gap-1 font-inter font-normal text-xs leading-[1.5] tracking-normal align-middle">
@@ -254,7 +263,7 @@ export const vouchingColumns: ColumnDef<any, any>[] = [
       </div>
     ),
     cell: (info) => (
-      <div class="flex justify-end gap-1 px-4">
+      <div class="flex justify-end gap-1 px-2">
         <img src={dropDown.src} alt="sort" class="w-4 h-4" />
       </div>
     ),

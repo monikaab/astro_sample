@@ -67,43 +67,47 @@ export default function VouchingTable() {
       renderRightContent={() => (
         <div class="flex items-center gap-2">
           <SearchInput />
-          <button onClick={handleClick} class="bg-purple-400 w-20 h-10 gap-2.5 px-4 py-1.8 rounded-lg font-inter font-small text-sm text-white leading-[1.5] tracking-normal">
+          <button
+            onClick={handleClick}
+            class="bg-purple-400 w-20 h-10 px-4 py-1.5 rounded-lg font-inter text-sm text-white leading-[1.5] tracking-normal flex items-center justify-center text-center"
+          >
             Upload
           </button>
+
         </div>
       )}
       renderFooterRow={() => {
         const totalAmountRecorded = vouchingData.reduce((sum, row) => sum + row.amountRecorded, 0);
         const totalAmountVerified = vouchingData.reduce((sum, row) => sum + row.amountVerified, 0);
-    
+
         return (
           <>
             {/* Merge first two columns */}
             <td colSpan={2} class="font-inter p-1 justify-center text-center border border-gray-300 text-xs font-semibold text-gray-300 bg-gray-111">
-            Total newly acquired assets in 2020
+              Total newly acquired assets in 2020
             </td>
-    
+
             {/* Description */}
             <td class="p-1 border border-gray-300 bg-purple-80"></td>
-    
+
             {/* Corresponding account */}
             <td class="p-1 border border-gray-300 bg-purple-80"></td>
-    
+
             {/* DR */}
             <td class="font-inter p-1 border border-gray-300 text-right text-xs font-inter font-normal text-xs leading-[1.5] tracking-normal align-middle text-gray-800 bg-white">
               {totalAmountRecorded}
             </td>
-    
+
             {/* CR */}
             <td class="font-inter p-1 border border-gray-300 text-right text-xs font-inter font-normal text-xs leading-[1.5] tracking-normal align-middle text-gray-800 bg-white">
               {totalAmountVerified}
             </td>
-    
+
             {/* A–E check columns (just placeholders) */}
             {Array.from({ length: 5 }).map((_, idx) => (
               <td key={`footer-check-${idx}`} class="p-1 border border-gray-300 bg-purple-80"></td>
             ))}
-    
+
             {/* Evidence */}
             <td class="p-1 border border-gray-300 bg-purple-80"></td>
           </>
