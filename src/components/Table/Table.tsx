@@ -21,6 +21,7 @@ interface TableRootProps<T> {
   data: T[];
   columns: ColumnDef<T, any>[];
   renderRightContent?: () => JSX.Element;
+  renderLeftContent?: () => JSX.Element;
 }
 
 const TableRoot = <T extends Record<string, any>>(props: TableRootProps<T>): JSX.Element => {
@@ -39,7 +40,12 @@ const TableRoot = <T extends Record<string, any>>(props: TableRootProps<T>): JSX
   });
 
   return (
-    <CardComponent title={props.title} team={props.team} renderRightContent={props.renderRightContent}>
+    <CardComponent
+      title={props.title}
+      team={props.team}
+      renderLeftContent={props.renderLeftContent}
+      renderRightContent={props.renderRightContent}
+    >
       <div class="overflow-hidden rounded-xl border border-gray-200">
         <table class="w-full border-separate border-spacing-0">
           <thead class="bg-purple-80">

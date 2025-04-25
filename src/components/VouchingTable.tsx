@@ -1,6 +1,8 @@
 import Table from "./Table/Table";
 import { vouchingColumns } from "../columns/vouchingColumns";
 import SearchInput from "./SearchInput";
+import expandIcon from "../assets/expand.svg";
+import Capsule from "./Capsule";
 
 const vouchingData = [
   {
@@ -47,6 +49,21 @@ export default function VouchingTable() {
       title="Page #1 Test"
       data={vouchingData}
       columns={vouchingColumns}
+      renderLeftContent={() => (
+        <div class="flex items-center gap-1">
+          <img src={expandIcon.src} alt="expand" class="w-5 h-5" />
+          <Capsule 
+            text="C"
+            color="bg-green-200"
+            textColor="text-gray-800"
+            />
+            <Capsule 
+            text="R/O"
+            color="bg-purple-500"
+            textColor="text-gray-800"
+            />
+        </div>
+      )}
       renderRightContent={() => (
         <div class="flex items-center gap-2">
           <SearchInput />
