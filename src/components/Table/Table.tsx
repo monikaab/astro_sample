@@ -47,7 +47,7 @@ const TableRoot = <T extends Record<string, any>>(props: TableRootProps<T>): JSX
       renderLeftContent={props.renderLeftContent}
       renderRightContent={props.renderRightContent}
     >
-      <div class="overflow-hidden rounded-xl border border-gray-200">
+      <div class="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
         <table class="w-full border-separate border-spacing-0">
           <thead class="bg-purple-80">
             {table.getHeaderGroups().map((headerGroup) => (
