@@ -1,6 +1,6 @@
 ---
 import VouchingTable from "../components/VouchingTable";
-
+import Layout from "../layouts/Layout.astro";
 
 const BASE_URL = "http://localhost:4321";
 
@@ -9,4 +9,6 @@ const json = await response.json();
 const vouchingData = json.data;
 ---
 
-<VouchingTable data={vouchingData} client:load />
+<Layout>
+    <VouchingTable data={vouchingData} client:load />
+</Layout>

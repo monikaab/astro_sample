@@ -1,6 +1,6 @@
 ---
 import ConclusionTable from "../components/ConclusionTable";
-
+import Layout from "../layouts/Layout.astro";
 
 const BASE_URL = "http://localhost:4321";
 
@@ -9,4 +9,6 @@ const json = await response.json();
 const data = json.data;
 ---
 
-<ConclusionTable data={data} client:load />
+<Layout>
+    <ConclusionTable data={data} client:load />
+</Layout>
