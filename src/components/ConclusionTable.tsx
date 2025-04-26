@@ -9,26 +9,27 @@ const team = [
   { initials: "SH", color: "#14b8a6" },
 ];
 
-const conclusions = [
-  {
-    conclusions: "The work has been performed in accordance with the audit program.",
-    Preparation: "MC",
-    Review: "RT",
-  },
-  {
-    conclusions: "The work performed and the results obtained have been adequately documented.",
-    Preparation: "MC",
-    Review: "SH",
-  },
-  {
-    conclusions: "All necessary information has been collected for the presentation and disclosure in the financial statements.",
-  },
-  {
-    conclusions: "Based on audit procedures performed, the above objectives have been met and without any material exception noted.",
-  },
-];
+// const conclusions = [
+//   {
+//     conclusions: "The work has been performed in accordance with the audit program.",
+//     Preparation: "MC",
+//     Review: "RT",
+//   },
+//   {
+//     conclusions: "The work performed and the results obtained have been adequately documented.",
+//     Preparation: "MC",
+//     Review: "SH",
+//   },
+//   {
+//     conclusions: "All necessary information has been collected for the presentation and disclosure in the financial statements.",
+//   },
+//   {
+//     conclusions: "Based on audit procedures performed, the above objectives have been met and without any material exception noted.",
+//   },
+// ];
 
-export default function ConclusionTable() {
+export default function ConclusionTable(data) {
+  console.log("ConclusionTable data", data);
   const handleClick = () => {
     alert("Button clicked!");
   };
@@ -37,7 +38,7 @@ export default function ConclusionTable() {
     <Table
       title="Page #1 Conclusion"
       team={team}
-      data={conclusions}
+      data={data.data}
       columns={conclusionColumns}
       renderRightContent={() => (
         <div class="flex items-center gap-2">

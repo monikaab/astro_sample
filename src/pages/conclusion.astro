@@ -1,0 +1,12 @@
+---
+import ConclusionTable from "../components/ConclusionTable";
+
+
+const BASE_URL = "http://localhost:4321";
+
+const response = await fetch(`${BASE_URL}/api/conclusion-data`);
+const json = await response.json();
+const data = json.data;
+---
+
+<ConclusionTable data={data} client:load />

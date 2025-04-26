@@ -4,50 +4,14 @@ import SearchInput from "./SearchInput";
 import expandIcon from "../assets/expand.svg";
 import Capsule from "./Capsule";
 
-const vouchingData = [
-  {
-    "Voucher No.": "200000536",
-    "Recording data": "2024-12-01",
-    Description: "Payment for services",
-    "Corresponding account": "Accounts Payable",
-    amountRecorded: 1000,
-    amountVerified: 950,
-    checkInvoice: "Yes",
-    checkContract: "No",
-    Evidence: "Attached",
-  },
-  {
-    "Voucher No.": "200000536",
-    "Recording data": "2024-12-01",
-    Description: "Payment for services",
-    "Corresponding account": "Accounts Payable",
-    amountRecorded: 1000,
-    amountVerified: 950,
-    checkInvoice: "Yes",
-    checkContract: "No",
-    Evidence: "",
-  },
-  {
-    "Voucher No.": "200000536",
-    "Recording data": "2024-12-01",
-    Description: "Payment for services",
-    "Corresponding account": "Accounts Payable",
-    amountRecorded: 1000,
-    amountVerified: 950,
-    checkInvoice: "Yes",
-    checkContract: "No",
-    Evidence: "",
-  },
-];
-
-export default function VouchingTable() {
+export default function VouchingTable(data: any) {
   const handleClick = () => {
     alert("Button clicked!");
   };
   return (
     <Table
       title="Page #1 Test"
-      data={vouchingData}
+      data={data.data}
       columns={vouchingColumns}
       renderLeftContent={() => (
         <div class="flex items-center gap-1">
@@ -77,8 +41,8 @@ export default function VouchingTable() {
         </div>
       )}
       renderFooterRow={() => {
-        const totalAmountRecorded = vouchingData.reduce((sum, row) => sum + row.amountRecorded, 0);
-        const totalAmountVerified = vouchingData.reduce((sum, row) => sum + row.amountVerified, 0);
+        const totalAmountRecorded = data.data.reduce((sum, row) => sum + row.amountRecorded, 0);
+        const totalAmountVerified = data.data.reduce((sum, row) => sum + row.amountVerified, 0);
 
         return (
           <>

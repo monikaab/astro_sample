@@ -1,0 +1,12 @@
+---
+import VouchingTable from "../components/VouchingTable";
+
+
+const BASE_URL = "http://localhost:4321";
+
+const response = await fetch(`${BASE_URL}/api/vouching-data`);
+const json = await response.json();
+const vouchingData = json.data;
+---
+
+<VouchingTable data={vouchingData} client:load />
