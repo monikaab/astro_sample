@@ -20,11 +20,15 @@ export default function VouchingTable(data: any) {
             text="C"
             color="bg-green-200"
             textColor="text-gray-800"
+            textSize="text-s"
+            textWeight="font-medium"
           />
           <Capsule
             text="R/O"
             color="bg-purple-500"
             textColor="text-gray-800"
+            textSize="text-s"
+            textWeight="font-medium"
           />
         </div>
       )}
