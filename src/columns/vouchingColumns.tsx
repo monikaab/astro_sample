@@ -18,7 +18,7 @@ export const vouchingColumns: ColumnDef<any, any>[] = [
         onClick={() => column.toggleSorting()}
       >
         Voucher No.
-        <img src={sortIcon.src} alt="sort" class="w-3 h-3" />
+        <img src={sortIcon.src} alt="sort" class="w-1.8 h-2.5" />
       </div>
     ),
     cell: (info) =>
@@ -39,7 +39,7 @@ export const vouchingColumns: ColumnDef<any, any>[] = [
         onClick={() => column.toggleSorting()}
       >
         Recording data
-        <img src={sortIcon.src} alt="sort" class="w-3 h-3" />
+        <img src={sortIcon.src} alt="sort" class="w-1.8 h-2.5" />
       </div>
     ),
     cell: (info) =>
@@ -60,7 +60,7 @@ export const vouchingColumns: ColumnDef<any, any>[] = [
         onClick={() => column.toggleSorting()}
       >
         Description
-        <img src={sortIcon.src} alt="sort" class="w-3 h-3" />
+        <img src={sortIcon.src} alt="sort" class="w-1.8 h-2.5" />
       </div>
     ),
     cell: (info) =>
@@ -81,7 +81,7 @@ export const vouchingColumns: ColumnDef<any, any>[] = [
         onClick={() => column.toggleSorting()}
       >
         Corresponding account
-        <img src={sortIcon.src} alt="sort" class="w-3 h-3" />
+        <img src={sortIcon.src} alt="sort" class="w-1.8 h-2.5" />
       </div>
     ),
     meta: {
@@ -114,7 +114,7 @@ export const vouchingColumns: ColumnDef<any, any>[] = [
           onClick={() => column.toggleSorting()}
         >
           DR
-          <img src={sortIcon.src} alt="sort" class="w-3 h-3" />
+          <img src={sortIcon.src} alt="sort" class="w-1.8 h-2.5" />
         </div>
         ),
         meta: {
@@ -136,7 +136,7 @@ export const vouchingColumns: ColumnDef<any, any>[] = [
           onClick={() => column.toggleSorting()}
         >
           CR
-          <img src={sortIcon.src} alt="sort" class="w-3 h-3" />
+          <img src={sortIcon.src} alt="sort" class="w-1.8 h-2.5" />
         </div>
         ),
         meta: {
@@ -255,7 +255,7 @@ export const vouchingColumns: ColumnDef<any, any>[] = [
           onClick={() => column.toggleSorting()}
         >
           Evidence
-          <img src={sortIcon.src} alt="sort" class="w-3 h-3" />
+          <img src={sortIcon.src} alt="sort" class="w-1.8 h-2.5" />
         </div>
         <div class="flex justify-end gap-1 items-center">
           <img src={dropDown.src} alt="sort" class="w-4 h-4" />
